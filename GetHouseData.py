@@ -57,3 +57,4 @@ def download_all():  #@save
             DATA_URL + 'kaggle_house_pred_test.csv',
             'fa19780a7b011d9b009e8bff8e99922a8ee2eb90')
 
+# 尝试修改函数未成功报错
