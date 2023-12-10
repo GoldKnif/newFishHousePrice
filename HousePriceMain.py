@@ -33,9 +33,8 @@ all_features[numeric_features] = all_features[numeric_features].apply(
     lambda x: (x - x.mean()) / (x.std()))
 all_features[numeric_features] = all_features[numeric_features].fillna(0)
 
-all_features = pd.get_dummies(all_features,dummy_na=True)
+all_features = pd.get_dummies(all_features, dummy_na=True)
 print(all_features.shape)
-print(all_features.head(5))
     # 完成编码 输出成功 12/09
 
 
@@ -44,10 +43,10 @@ print(all_features.head(5))
 n_train = train_data.shape[0]
 
 train_features = torch.tensor(
-    all_features[:n_train].values,dtype=torch.float32
+    all_features[:n_train].values.astype(np.float32),dtype=torch.float32
 )
 test_features=torch.tensor(
-    all_features[:n_train].values,dtype=torch.float32
+    all_features[:n_train].values.astype(np.float32),dtype=torch.float32
 )
 train_labels=torch.tensor(
     train_data.SalePrice.values.reshape(-1,1),dtype=torch.float32
@@ -57,3 +56,7 @@ print(train_data.SalePrice.values.reshape(-1,1).shape)
 # 出错 卡住 出现报错
 # TypeError: can't convert np.ndarray of type numpy.object_. The only supported types are: float64, float32, float16, complex64, complex128, int64, int32, int16, int8, uint8, and bool.
 # 返回检查 12/09
+
+# 12/10 pandas 版本问题 或尝试修改代码
+# 修改代码添加 .astype(np.float32) 后正常
+
