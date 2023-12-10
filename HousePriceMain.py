@@ -51,12 +51,31 @@ test_features=torch.tensor(
 train_labels=torch.tensor(
     train_data.SalePrice.values.reshape(-1,1),dtype=torch.float32
 )
-print(train_data.SalePrice.values.reshape(-1,1).shape)
+# print(train_data.SalePrice.values.reshape(-1,1).shape)
 
-# 出错 卡住 出现报错
-# TypeError: can't convert np.ndarray of type numpy.object_. The only supported types are: float64, float32, float16, complex64, complex128, int64, int32, int16, int8, uint8, and bool.
-# 返回检查 12/09
+    # 出错 卡住 出现报错
+    # TypeError: can't convert np.ndarray of type numpy.object_. The only supported types are: float64, float32, float16, complex64, complex128, int64, int32, int16, int8, uint8, and bool.
+    # 返回检查 12/09
 
-# 12/10 pandas 版本问题 或尝试修改代码
-# 修改代码添加 .astype(np.float32) 后正常
+    # 12/10 pandas 版本问题 或尝试修改代码
+    # 修改代码添加 .astype(np.float32) 后正常
 
+
+# 5.添加均方误差损失函数
+loss = nn.MSELoss()
+in_features = train_features.shape[1]
+print(in_features)
+
+# 定义网络，输出预测的一个房价
+def get_net():
+    net = nn.Sequential(nn.Linear(in_features,1))
+    return net
+
+
+def log_rmse(net, features, labels):
+    # 稳定数据，将小于1的值设置为1
+    clipped_preds = torch.clamp(net(features), 1, float('inf'))
+    rmse = torch.sqrt(loss(torch.log(clipped_preds),torch.log(labels)))
+    return rmse.item()
+# 代码先写这么多，补习一下数学基础 回顾内容
+# 以及临时抱佛脚一下六级考试 暂停几天
