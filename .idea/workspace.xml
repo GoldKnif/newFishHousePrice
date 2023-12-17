@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7ff57da-8435-486e-9cb2-68c4a747375e" name="Changes" comment="错误已解决 进入下一步">
+    <list default="true" id="c7ff57da-8435-486e-9cb2-68c4a747375e" name="Changes" comment="K折交叉验证学习2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousePriceMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/HousePriceMain.py" afterDir="false" />
     </list>
@@ -78,7 +78,7 @@
       <updated>1702013138461</updated>
       <workItem from="1702013140650" duration="1758000" />
       <workItem from="1702014954143" duration="771000" />
-      <workItem from="1702016106805" duration="8402000" />
+      <workItem from="1702016106805" duration="9795000" />
     </task>
     <task id="LOCAL-00001" summary="尝试下载数据未成功">
       <option name="closed" value="true" />
@@ -144,7 +144,31 @@
       <option name="project" value="LOCAL" />
       <updated>1702200561992</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="完成损失函数 下一步补习一下数学基础&#10;以及英语六级考试将近 抱个佛脚先&#10;停更几天">
+      <option name="closed" value="true" />
+      <created>1702200775936</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1702200775936</updated>
+    </task>
+    <task id="LOCAL-00010" summary="K折交叉验证学习">
+      <option name="closed" value="true" />
+      <created>1702780646669</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1702780646669</updated>
+    </task>
+    <task id="LOCAL-00011" summary="K折交叉验证学习2">
+      <option name="closed" value="true" />
+      <created>1702814295692</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1702814295692</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +208,10 @@
     <MESSAGE value="完成数据归一化和编码并测试" />
     <MESSAGE value="进行数据结构转化时出现错误 寻找结局方法中" />
     <MESSAGE value="错误已解决 进入下一步" />
-    <option name="LAST_COMMIT_MESSAGE" value="错误已解决 进入下一步" />
+    <MESSAGE value="完成损失函数 下一步补习一下数学基础&#10;以及英语六级考试将近 抱个佛脚先&#10;停更几天" />
+    <MESSAGE value="K折交叉验证学习" />
+    <MESSAGE value="K折交叉验证学习2" />
+    <option name="LAST_COMMIT_MESSAGE" value="K折交叉验证学习2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pythonProject1$HousePriceMain.coverage" NAME="HousePriceMain Coverage Results" MODIFIED="1702178484871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

@@ -79,3 +79,26 @@ def log_rmse(net, features, labels):
     return rmse.item()
 # 代码先写这么多，补习一下数学基础 回顾内容
 # 以及临时抱佛脚一下六级考试 暂停几天
+
+
+#考完六级回来了 总计 考试体验非常好，明年还会继续考 继续
+
+
+
+# 训练函数 12/17
+def train(net, train_features, train_labels, test_features, test_labels,
+          num_epochs, learning_rate, weight_decay, batch_size):
+    train_ls, test_ls = [], []
+    train_iter = d2l.load_array((train_features, train_labels), batch_size)
+    # 这里使用的是Adam优化算法
+    optimizer = torch.optim.Adam(net.parameters(),lr = learning_rate,weight_decay = weight_decay)
+    for epoch in range(num_epochs):
+        for X, y in train_iter:
+            optimizer.zero_grad() #优化器归零
+            l = loss(net(X), y) #计算损失 网络 和标签
+            l.backward() #反向传播
+            optimizer.step() #梯度更新
+        train_ls.append(log_rmse(net, train_features, train_labels)) #瞬时值添加到数组
+        if test_labels is not None:
+            test_ls.append(log_rmse(net, test_features, test_labels)) #测试验证
+    return train_ls, test_ls #返回损失值
