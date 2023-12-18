@@ -138,3 +138,13 @@ def k_fold(k, X_train, y_train, num_epochs, learning_rate, weight_decay,
         print(f'折{i + 1}，训练log rmse{float(train_ls[-1]):f}, '
               f'验证log rmse{float(valid_ls[-1]):f}')
     return train_l_sum / k, valid_l_sum / k
+
+#超参数
+k, num_epochs, lr, weight_decay, batch_size = 5, 100, 5, 0, 64
+train_l, valid_l = k_fold(k, train_features, train_labels, num_epochs, lr,
+                          weight_decay, batch_size)
+print(f'{k}-折验证: 平均训练log rmse: {float(train_l):f}, '
+      f'平均验证log rmse: {float(valid_l):f}')
+
+    # 测试结果
+    # 5-折验证: 平均训练log rmse: 0.165597, 平均验证log rmse: 0.170690
